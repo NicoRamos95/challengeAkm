@@ -12,3 +12,10 @@ body {
   border-radius: 10vw 10vw;
   background-color: white;
 }
+
+.navlink {
+  text-decoration: none;
+  border-radius: 10vw;
+  background-color: aliceblue;
+  padding: 1vw 2vw 1vw 2vw;
+}

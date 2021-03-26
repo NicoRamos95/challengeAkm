@@ -14,6 +14,21 @@ const validator = {
         } else {
             res.json({success: false, errores: ['Complete todos lo campos correctamente.']})
         }
+    },
+    addOperation: (req, res, next) => {
+        const schema = Joi.object({
+            concept: Joi.string(),
+            amount: Joi.number(),
+            date: Joi.date(),
+            category: Joi.string(),
+            type: Joi.string(),
+        })
+        const validation = schema.validate(req.body, {abortEarly: false})
+        if (!validation.error) {
+            next()
+        } else {
+            res.json({success: false, errores: ['Complete todos lo campos correctamente.']})
+        }
     }
 }
 

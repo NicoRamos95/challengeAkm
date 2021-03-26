@@ -1,3 +1,4 @@
+/* eslint-disable no-redeclare */
 import './App.css';
 import Home from './components/Home';
 import Header from './components/Header';
@@ -11,12 +12,10 @@ import { useState } from 'react'
 function App(props) {
   const [reload, setReload] = useState(false)
   if (props.loggedUser) {
-    var routes = 
-    <>
+    var links = 
     <Switch>
       <Route exact path="/" component={Home}/>
-      </Switch>
-    </>
+    </Switch>
   } 
   else if (localStorage.getItem('token')) {
     props.logLS(localStorage.getItem('token'))
@@ -25,20 +24,19 @@ function App(props) {
     })
   }
   else {
-    var routes =  <><Switch>
+    var links =  
+    <Switch>
       <Route exact path="/" component={Home}/>
       <Route path="/register" component={Register}/>
       <Route path="/login"component={Login}/>
       <Redirect to="/" />
-      </Switch></>
+    </Switch>
   }
   return (
-    <>
-      <BrowserRouter>
-        <Header />
-        {routes}
-      </BrowserRouter>
-  </>
+    <BrowserRouter>
+      <Header />
+      {links}
+    </BrowserRouter>
   );
 }
 

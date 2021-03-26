@@ -39,7 +39,7 @@ const userController = {
         return res.json({success: true, response: {token, userExists: userExists.email, urlPic: userExists.urlPic, firstName: userExists.firstName,}}) 
     },
     logLS: (req, res) => {
-        res.json({success: true, response: {token: req.body.token, firstName: req.user.firstName, userExists: req.user.userExists, urlPic: req.user.urlPic}}) 
+        res.json({success: true, response: {token: req.body.token, firstName: req.user.firstName, email: req.user.email, urlPic: req.user.urlPic}}) 
     }
 
 }
