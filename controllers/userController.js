@@ -17,10 +17,7 @@ const userController = {
             })
             var userSave = await newUser.save()
             var token = jwt.sign({...userSave}, process.env.SECRET_KEY, {})
-            
         }
-        
-
         return res.json({success: errores.length === 0 ? true : false, 
                         errores: errores, 
                         response: errores.length === 0 && {token, urlPic: userSave.urlPic, firstName: userSave.firstName, email: userSave.email}}) 
@@ -39,7 +36,6 @@ const userController = {
         }
         
         var token = jwt.sign({...userExists}, process.env.SECRET_KEY, {})
-        console.log(userExists)
         return res.json({success: true, response: {token, userExists: userExists.email, urlPic: userExists.urlPic, firstName: userExists.firstName,}}) 
     },
     logLS: (req, res) => {

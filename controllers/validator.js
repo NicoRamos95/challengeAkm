@@ -9,7 +9,6 @@ const validator = {
             urlPic: Joi.string().required(),
         })
         const validation = schema.validate(req.body, {abortEarly: false})
-        console.log(validation)
         if (!validation.error) {
             next()
         } else {

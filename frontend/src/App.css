@@ -1,38 +1,14 @@
-.App {
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url('https://images.squarespace-cdn.com/content/v1/55d0fb97e4b00eb973693442/1441230460601-N6MRUUG5S0DRS529FDET/ke17ZwdGBToddI8pDm48kElufIGIMwkjBY6-sF-8j3l7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UdWrJsxWj1dS0hw3fBk3OsRm2ft5y3oEHzYyl0t_VKv0Dxb2w5SppyqLtPdkEDDHsw/simple-blue-background-abstract-photo-blue-background.jpg?format=1500w');
+  background-size: cover;
+  background-repeat: no-repeat;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.titulo {
+  margin: 5vw 0vh;
+  border-radius: 10vw 10vw;
+  background-color: white;
 }

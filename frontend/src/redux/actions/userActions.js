@@ -1,5 +1,6 @@
 import axios from "axios"
 import {Url} from "../../components/ApiUrl"
+
 const authActions = {
     newUser: (user) => {
         return async (dispatch) => {
@@ -37,7 +38,7 @@ const authActions = {
     loginUser: (user) => {
         return async (dispatch) => {
             const response = await axios.post( `${Url}/user/login`, user)
-            console.log(response.data.response)
+            console.log(response.data)
             if (!response.data.success) {
                 return response.data
             }
