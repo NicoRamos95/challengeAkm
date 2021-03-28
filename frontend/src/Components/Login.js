@@ -16,15 +16,14 @@ const Login = (props) => {
             [campo]: value
         })
     }
-
-    console.log(props.loggedUser)
+    console.log(props)
     const validateUser = async e => {
         setErrors([])
         const response = await props.loginUser(userLogin)
         if (response && !response.success) {
             setErrors([response.mensaje])
         } else {
-            alert("Bienvenido")
+            props.history.push('/')
         }
     }
     const keyPress = e => {

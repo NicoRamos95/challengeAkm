@@ -36,10 +36,10 @@ const userController = {
         }
         
         var token = jwt.sign({...userExists}, process.env.SECRET_KEY, {})
-        return res.json({success: true, response: {token, userExists: userExists.email, urlPic: userExists.urlPic, firstName: userExists.firstName,}}) 
+        return res.json({success: true, response: {token, userExists: userExists.email, urlPic: userExists.urlPic, firstName: userExists.firstName, id: userExists._id}}) 
     },
     logLS: (req, res) => {
-        res.json({success: true, response: {token: req.body.token, firstName: req.user.firstName, email: req.user.email, urlPic: req.user.urlPic}}) 
+        res.json({success: true, response: {token: req.body.token, firstName: req.user.firstName, email: req.user.email, urlPic: req.user.urlPic, id: req.user._id}}) 
     }
 
 }

@@ -28,29 +28,21 @@ const operationController = {
 
       Operation.findOneAndUpdate({_id: id}, {concept, amount, date, category, content}, {new: true})
       .then(operation => {
-        console.log(operation)
         return res.json({success: true, respuesta: operation})
       })
       .catch(error => {
-        console.log(error)
         return res.json({success: false, error: error})
       })
     },
     deleteOperation: async (req, res) => {
         try {
-            const {id} = req.body
-            await Operation.findOneAndDelete({ _id: id })
-            const response = await Operation.find()
-            res.json({
-              success: true,
-              response
-            })
-          } catch (error) {
-            res.json({
-              success: false,
-              error
-            })
-          }
+          const {id} = req.body
+          await Operation.findOneAndDelete({ _id: id })
+          const response = await Operation.find()
+           res.json({ success: true, response })
+        } catch (error) {
+          res.json({ success: false, error })
+        }
       
     }
 }

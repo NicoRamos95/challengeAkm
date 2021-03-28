@@ -25,11 +25,12 @@ const Register = (props) => {
         if (response && !response.success) {
             setErrors(response.errores)
         } else {
-            alert("usuario registrado")
+            props.history.push('/')
         }
     }
   
     return (
+        <>
         <div className="container d-flex justify-content-center">
             <div className="row col-6">
                 <h1 className="titulo">Register</h1>
@@ -45,14 +46,15 @@ const Register = (props) => {
                     <Button onClick={validateUser} className="m-5" type="submit">Register</Button>
                 </Form>
             </div>
+        </div>
             <div>
                 {errors.map((error, index) =>
-                    <Alert key={index}>
+                    <h5 key={index}>
                         {error}
-                    </Alert>
+                    </h5>
                 )}
             </div>
-        </div>
+            </>
     )
 }
 
